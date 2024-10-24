@@ -7,12 +7,12 @@ export const projects = [
   {
     title: "Todooze",
     description: "A minimal project management app",
-    link: "https://github.com/pooridev/todooze",
+    link: "https://github.com/pooridev/todoooze",
   },
   {
     title: "CSS Flex Box Playground",
     description:
       "Interactive playground to learn flex box by visualizing flex properties",
-    link: "https://github.com/pooridev/css-flexbox-playground",
+    link: "https://github.com/pooridev/flexbox-playground",
   },
 ];
