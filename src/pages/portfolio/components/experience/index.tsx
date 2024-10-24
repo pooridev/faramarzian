@@ -14,12 +14,22 @@ const Experience = () => {
               <div className="flex flex-col sm:flex-row justify-between items-start mb-4">
                 <div>
                   <div className="flex items-start gap-4 mb-2">
-                    <div className="w-20">
+                    <a
+                      className="w-20"
+                      target="_blank"
+                      href={experience.company.linkedInProfile}
+                    >
                       <img src={experience.logo} />
-                    </div>
+                    </a>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold">{experience.role}</h3>
-                      <p className="text-gray-400">{experience.company}</p>
+                      <a
+                        className="text-gray-400"
+                        target="_blank"
+                        href={experience.company.linkedInProfile}
+                      >
+                        {experience.company.name}
+                      </a>
                       <p className="text-gray-500">{experience.location}</p>
                     </div>
                   </div>
