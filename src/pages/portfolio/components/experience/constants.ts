@@ -5,7 +5,10 @@ import calistuLogo from "@assets/logos/calistu.jpeg";
 
 export const experiences = [
   {
-    company: "Blu Bank",
+    company: {
+      name: "Blu Bank",
+      linkedInProfile: "https://www.linkedin.com/company/blubank/",
+    },
     location: "Tehran, Iran (Hybrid)",
     logo: bluLogo,
     role: "Senior Frontend Engineer",
@@ -16,7 +19,10 @@ export const experiences = [
     ],
   },
   {
-    company: "Snappfood",
+    company: {
+      name: "Snappfood",
+      linkedInProfile: "https://www.linkedin.com/company/snappfood/",
+    },
     location: "Tehran, Iran (Hybrid)",
     logo: snappfoodLogo,
     role: "Senior Frontend Engineer",
@@ -28,7 +34,10 @@ export const experiences = [
     ],
   },
   {
-    company: "Snappfood",
+    company: {
+      name: "Snappfood",
+      linkedInProfile: "https://www.linkedin.com/company/snappfood/",
+    },
     location: "Tehran, Iran (Hybrid)",
     logo: snappfoodLogo,
     role: "Frontend Engineer",
@@ -44,7 +53,10 @@ export const experiences = [
     ],
   },
   {
-    company: "Digikala",
+    company: {
+      name: "Digikala",
+      linkedInProfile: "https://www.linkedin.com/company/Digikala/",
+    },
     location: "Tehran, Iran (Remote)",
     role: "Frontend Developer",
     logo: digikalaLogo,
@@ -54,7 +66,10 @@ export const experiences = [
     ],
   },
   {
-    company: "Calistu",
+    company: {
+      name: "Calistu",
+      linkedInProfile: "https://www.linkedin.com/company/calistucom/",
+    },
     location: "Dubai, UAE (Remote)",
     role: "Frontend Developer",
     logo: calistuLogo,
