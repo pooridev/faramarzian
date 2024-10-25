@@ -19,7 +19,7 @@ const Experience = () => {
                       target="_blank"
                       href={experience.company.linkedInProfile}
                     >
-                      <img src={experience.logo} />
+                      <img className="rounded-lg" src={experience.logo} />
                     </a>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold">{experience.role}</h3>
