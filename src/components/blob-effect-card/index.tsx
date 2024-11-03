@@ -1,11 +1,4 @@
-import {
-  FC,
-  PropsWithChildren,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { FC, PropsWithChildren, RefObject, useMemo, useRef } from "react";
 import useMouseMove from "./hooks/use-mouse-move";
 
 interface BlobEffectCardProps {
@@ -32,18 +25,15 @@ interface BlobEffectProps {
 
 const BlobEffect: FC<BlobEffectProps> = ({ cardRef }) => {
   const mousePosition = useMouseMove();
-  const [localMousePosition, setLocalMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const element = cardRef.current;
-    if (!element) return;
+  const cardRect = useMemo(() => {
+    if (!cardRef.current) return { left: 0, top: 0 };
 
-    const rect = element.getBoundingClientRect();
-    const x = mousePosition.x - rect.left;
-    const y = mousePosition.y - rect.top;
+    return cardRef.current?.getBoundingClientRect();
+  }, [cardRef, mousePosition.x, mousePosition.y]);
 
-    setLocalMousePosition({ x, y });
-  }, [mousePosition, cardRef]);
+  const x = mousePosition.x - cardRect.left;
+  const y = mousePosition.y - cardRect.top;
 
   return (
     <div
@@ -52,7 +42,7 @@ const BlobEffect: FC<BlobEffectProps> = ({ cardRef }) => {
         width: "300px",
         height: "300px",
         // Offset blob to center it on mouse pointer
-        transform: `translate(calc(${localMousePosition.x}px - 200px), calc(${localMousePosition.y}px - 200px))`,
+        transform: `translate(calc(${x}px - 200px), calc(${y}px - 200px))`,
         transition: "transform 0.2s ease-out, opacity 0.3s ease-out",
       }}
     />
