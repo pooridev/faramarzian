@@ -7,8 +7,8 @@ export interface MousePosition {
 
 const useMouseMove = () => {
   const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
+    x: -200,
+    y: -200,
   });
 
   useEffect(() => {
